@@ -1,0 +1,15 @@
+[tasks.serve_frontend]
+workspace = false
+command = "wasm-pack"
+args = ["build", "--dev", "--target", "web", "--out-name", "wasm", "--out-dir", "../static/pkg", "frontend"]
+watch = {  ignore_pattern = "static/*" }
+
+
+[tasks.serve_backend]
+workspace = false
+command = "cargo"
+args = ["run", "--bin", "backend"]
+
+[tasks.serve]
+workspace = false
+run_task = {name=["serve_frontend", "serve_backend"]}
