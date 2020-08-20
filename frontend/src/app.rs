@@ -11,7 +11,10 @@ use yew_functional::{use_reducer_with_init, use_state, FunctionComponent, Functi
 
 #[functional_component]
 pub fn my_app() -> Html {
-    let initial_state = StoreModel { items: vec![] };
+    let initial_state = StoreModel {
+        items: vec![],
+        document_title: "TestDocument".to_string(),
+    };
 
     let (store, dispatch) =
         use_reducer_with_init(reducer, initial_state, |initail_state: StoreModel| {

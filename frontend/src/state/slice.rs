@@ -6,6 +6,7 @@ pub struct ThoughtItem {
 #[derive(Clone, Debug)]
 pub struct StoreModel {
     pub items: Vec<ThoughtItem>,
+    pub document_title: String,
 }
 
 impl PartialEq for StoreModel {

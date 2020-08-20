@@ -29,6 +29,11 @@ body {
   height: 100%;
 }
 
+.searchbar {
+  display: flex;
+  flex-direction: column;
+}
+
 .Bottom {
   grid-area: Bottom;
   justify-self: center;

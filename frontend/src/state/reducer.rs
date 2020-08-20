@@ -20,11 +20,15 @@ pub enum Action {
 }
 
 pub fn reducer(prev: std::rc::Rc<StoreModel>, action: Action) -> StoreModel {
-    let StoreModel { items, .. } = &*prev;
+    let StoreModel {
+        items,
+        document_title,
+    } = &*prev;
 
     match action {
         Action::AddThoughtItem(item) => StoreModel {
             items: [items.clone(), vec![item]].concat(),
+            document_title: document_title.clone(),
             ..*prev
         },
     }
